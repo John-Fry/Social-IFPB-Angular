@@ -10,7 +10,6 @@ export class AppComponent {
   titulo = 'Social IFPB';
   usuario: Usuario;
   usuarios: Array<Usuario>;
-  aluno = 'John Meireles';
 
   constructor() {
     this.usuario = new Usuario();
@@ -20,5 +19,13 @@ export class AppComponent {
   inserirUsuario(): void {
     this.usuarios.push(this.usuario);
     this.usuario = new Usuario();
+  }
+  deletarUsuario(): void {
+    const indiceUsuario = this.usuarios.indexOf(this.usuario);
+    this.usuarios.splice(indiceUsuario, 1);
+  }
+  hidden = false;
+  toggleBadgeVisibility(): void {
+    this.hidden = !this.hidden
   }
 }
