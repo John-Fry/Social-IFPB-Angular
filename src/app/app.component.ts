@@ -25,7 +25,8 @@ export class AppComponent {
     this.usuarios.splice(indiceUsuario, 1);
   }
   hidden = false;
-  toggleBadgeVisibility(): void {
-    this.hidden = !this.hidden
+  toggleBadgeVisibility(usuario: Usuario): boolean {
+    this.hidden = !this.hidden;
+    return this.hidden;
   }
 }
